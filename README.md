@@ -1,4 +1,4 @@
-# Solène Fine Jewelry
+# Aura Plus Fine Jewelry
 
 Next.js (App Router) + Tailwind CSS storefront with cash on delivery.
 
