@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Theme tokens: light by default, dark follows the system ---------- */
+:root {
+  --bg: #FBF4F2;
+  --surface: #FFFFFF;
+  --fg: #1B1931;
+  --muted: #5F4E69;
+  --line: #E8D6D3;
+  --accent: #A34054;
+  --accent-fg: #FFFFFF;
+  --btn-bg: #1B1931;
+  --btn-fg: #FBF4F2;
+  --btn-hover: #662249;
+  --tile-a: #F8E8E4;
+  --tile-b: #EBC9C5;
+  --shadow: rgb(27 25 49 / 0.35);
+  --band-a: #44174E;
+  --band-b: #1B1931;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1B1931;
+    --surface: #241F3E;
+    --fg: #F6E9E6;
+    --muted: #C4B0C2;
+    --line: #3B2E55;
+    --accent: #ED9E59;
+    --accent-fg: #1B1931;
+    --btn-bg: #ED9E59;
+    --btn-fg: #1B1931;
+    --btn-hover: #E9BCB9;
+    --tile-a: #4A1D58;
+    --tile-b: #2B1B47;
+    --shadow: rgb(0 0 0 / 0.5);
+    --band-a: #662249;
+    --band-b: #44174E;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-page font-sans text-[15px] leading-[1.65] text-fg antialiased; }
+  h1, h2, h3, h4 { @apply font-display font-medium; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  section[id] { scroll-margin-top: 96px; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-[1320px] px-[clamp(16px,4vw,48px)]; }
+  .eyebrow { @apply text-[11px] font-medium uppercase leading-snug tracking-[.22em] text-muted; }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-[.7em] border border-btn bg-btn px-[30px] py-4 text-[11.5px] font-semibold uppercase leading-none tracking-[.18em] text-btnfg no-underline transition duration-300 hover:border-btnhover hover:bg-btnhover active:translate-y-px disabled:cursor-not-allowed disabled:opacity-55;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center border border-fg bg-transparent px-[30px] py-4 text-[11.5px] font-semibold uppercase leading-none tracking-[.18em] text-fg transition duration-300 hover:bg-fg hover:text-page;
+  }
+  .chip {
+    @apply border border-line bg-transparent px-4 py-2.5 text-[11px] font-medium uppercase leading-none tracking-[.16em] transition duration-300 hover:border-fg;
+  }
+  .chip[aria-pressed='true'] { @apply border-fg bg-fg text-page; }
+
+  .icon-btn {
+    @apply relative grid h-[42px] w-[42px] place-items-center border-0 bg-transparent p-0 transition duration-300 hover:-translate-y-0.5 hover:text-accent;
+  }
+  .icon-btn svg { @apply h-[21px] w-[21px]; }
+  .badge {
+    @apply absolute right-px top-[3px] h-[17px] min-w-[17px] animate-bump rounded-full bg-accent px-1 text-center text-[10px] font-semibold leading-[17px] text-accentfg tabular-nums;
+  }
+
+  /* Underline that grows from the left on hover / focus */
+  .grow-line { position: relative; }
+  .grow-line::after {
+    content: '';
+    position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+    background: var(--accent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .grow-line:hover::after, .grow-line:focus-visible::after { transform: scaleX(1); }
+
+  /* Textlink: faint rule with the accent rule growing over it */
+  .textlink { @apply grow-line py-1.5 text-[11.5px] font-medium uppercase leading-none tracking-[.18em] no-underline; }
+  .textlink::before { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--line); }
+
+  .tile { background: linear-gradient(160deg, var(--tile-a), var(--tile-b)); }
+  .obj { filter: drop-shadow(0 10px 12px rgb(27 25 49 / 0.24)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

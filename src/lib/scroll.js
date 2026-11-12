@@ -1,0 +1,7 @@
+/** Smooth-scroll to an element id, respecting reduced-motion settings. */
+export function scrollToId(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+}

@@ -1,0 +1,644 @@
+(globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push([typeof document === "object" ? document.currentScript : undefined,
+"[project]/src/components/Collection.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Collection
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$StoreContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/context/StoreContext.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$products$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/data/products.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ProductCard$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ProductCard.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+'use client';
+;
+;
+;
+;
+const CHIPS = [
+    [
+        'all',
+        'All'
+    ],
+    ...Object.entries(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$products$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CATEGORIES"])
+];
+function Collection() {
+    _s();
+    const { filter, setFilter, query, wish } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$StoreContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"])();
+    const list = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "Collection.useMemo[list]": ()=>{
+            const q = query.trim().toLowerCase();
+            return __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$products$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PRODUCTS"].filter({
+                "Collection.useMemo[list]": (p)=>{
+                    if (filter === 'saved' && !wish.includes(p.id)) return false;
+                    if (filter !== 'all' && filter !== 'saved' && p.category !== filter) return false;
+                    if (q && !`${p.name} ${p.metal} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$products$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CATEGORIES"][p.category]}`.toLowerCase().includes(q)) return false;
+                    return true;
+                }
+            }["Collection.useMemo[list]"]);
+        }
+    }["Collection.useMemo[list]"], [
+        filter,
+        query,
+        wish
+    ]);
+    const chips = [
+        ...CHIPS,
+        [
+            'saved',
+            `Saved${wish.length ? ` (${wish.length})` : ''}`
+        ]
+    ];
+    const q = query.trim();
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        id: "collection",
+        "aria-labelledby": "collection-title",
+        className: "pb-[88px] pt-[72px]",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "wrap",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mb-9 flex flex-wrap items-end justify-between gap-6",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "eyebrow",
+                                    children: "Featured collection"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Collection.js",
+                                    lineNumber: 31,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    id: "collection-title",
+                                    className: "mt-2.5 text-balance text-[clamp(2rem,4.5vw,3.2rem)] leading-[1.05]",
+                                    children: "Pieces to wear on repeat"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Collection.js",
+                                    lineNumber: 32,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/Collection.js",
+                            lineNumber: 30,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-wrap gap-2",
+                            role: "group",
+                            "aria-label": "Filter by category",
+                            children: chips.map(([key, label])=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    type: "button",
+                                    className: "chip",
+                                    "aria-pressed": filter === key,
+                                    onClick: ()=>setFilter(key),
+                                    children: label
+                                }, key, false, {
+                                    fileName: "[project]/src/components/Collection.js",
+                                    lineNumber: 38,
+                                    columnNumber: 15
+                                }, this))
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/Collection.js",
+                            lineNumber: 36,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/Collection.js",
+                    lineNumber: 29,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    className: "mb-5 min-h-[22px] text-[13px] text-muted",
+                    "aria-live": "polite",
+                    children: [
+                        q ? `Results for “${q}” · ` : '',
+                        list.length,
+                        " ",
+                        list.length === 1 ? 'piece' : 'pieces'
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/Collection.js",
+                    lineNumber: 45,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "grid grid-cols-2 gap-x-3.5 gap-y-[30px] min-[1000px]:grid-cols-4 min-[1000px]:gap-x-[26px] min-[1000px]:gap-y-12",
+                    children: list.length ? list.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ProductCard$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            product: p
+                        }, p.id, false, {
+                            fileName: "[project]/src/components/Collection.js",
+                            lineNumber: 52,
+                            columnNumber: 29
+                        }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "col-span-full py-16 text-center text-muted",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                className: "mb-2 text-[28px] leading-tight text-fg",
+                                children: filter === 'saved' && !q ? 'Nothing saved yet' : 'No pieces found'
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/Collection.js",
+                                lineNumber: 55,
+                                columnNumber: 15
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: filter === 'saved' && !q ? 'Tap the heart on any piece to keep it here.' : 'Try another search or category.'
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/Collection.js",
+                                lineNumber: 58,
+                                columnNumber: 15
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/Collection.js",
+                        lineNumber: 54,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/Collection.js",
+                    lineNumber: 50,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/Collection.js",
+            lineNumber: 28,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/src/components/Collection.js",
+        lineNumber: 27,
+        columnNumber: 5
+    }, this);
+}
+_s(Collection, "c3mo2HNd5BaWoAMAZYVTwr60eMY=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$StoreContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"]
+    ];
+});
+_c = Collection;
+var _c;
+__turbopack_context__.k.register(_c, "Collection");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/Hero.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Hero
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$StoreContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/context/StoreContext.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$products$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/data/products.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/format.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$scroll$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/scroll.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$icons$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/icons.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$JewelryArt$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/JewelryArt.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SafeImage$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/SafeImage.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+'use client';
+;
+;
+;
+;
+;
+;
+;
+const GOLD = [
+    '#FBE5B0',
+    '#E8B25A',
+    '#B8802F'
+];
+const DIAMOND = [
+    '#FFFFFF',
+    '#DCE4F5',
+    '#AEBBDD'
+];
+const star = (x, y, k, o)=>`<path transform="translate(${x} ${y}) scale(${k})" opacity="${o}" fill="#E9BCB9" d="M0 -14 Q0 0 14 0 Q0 0 0 14 Q0 0 -14 0 Q0 0 0 -14Z"/>`;
+/* Sunset panel in the palette, with the Aurora ring. Shown until /public/images/hero.jpg exists. */ const HERO_SVG = `<defs>` + `<linearGradient id="hero-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ED9E59"/><stop offset=".3" stop-color="#D9806A"/><stop offset=".5" stop-color="#A34054"/><stop offset=".74" stop-color="#662249"/><stop offset="1" stop-color="#2A1245"/></linearGradient>` + `<linearGradient id="hero-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${GOLD[0]}"/><stop offset=".5" stop-color="${GOLD[1]}"/><stop offset="1" stop-color="${GOLD[2]}"/></linearGradient>` + `<radialGradient id="hero-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#E9BCB9" stop-opacity=".55"/><stop offset="1" stop-color="#E9BCB9" stop-opacity="0"/></radialGradient>` + `<radialGradient id="hero-shadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#1B1931" stop-opacity=".55"/><stop offset="1" stop-color="#1B1931" stop-opacity="0"/></radialGradient>` + `</defs>` + `<rect width="600" height="720" fill="url(#hero-sky)"/>` + `<circle cx="300" cy="360" r="250" fill="url(#hero-glow)"/>` + `<circle cx="300" cy="360" r="150" fill="#E9BCB9" opacity=".22"/>` + `<ellipse cx="300" cy="640" rx="170" ry="26" fill="url(#hero-shadow)"/>` + star(110, 150, 1.4, 0.8) + star(505, 215, 1, 0.7) + star(450, 100, 0.7, 0.6) + star(85, 430, 0.8, 0.55) + star(525, 470, 1.2, 0.7) + `<g style="filter:drop-shadow(0 18px 22px rgba(27,25,49,.45))">` + `<circle cx="300" cy="470" r="150" fill="none" stroke="url(#hero-gold)" stroke-width="30"/>` + `<circle cx="300" cy="470" r="135" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="3"/>` + `<polygon points="252,296 348,296 326,342 274,342" fill="url(#hero-gold)"/>` + (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$JewelryArt$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["gemSvg"])(300, 258, 66, DIAMOND) + `</g>`;
+function HeroArt() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        className: "absolute inset-0 block h-full w-full",
+        viewBox: "0 0 600 720",
+        preserveAspectRatio: "xMidYMid slice",
+        "aria-hidden": "true",
+        dangerouslySetInnerHTML: {
+            __html: HERO_SVG
+        }
+    }, void 0, false, {
+        fileName: "[project]/src/components/Hero.js",
+        lineNumber: 39,
+        columnNumber: 5
+    }, this);
+}
+_c = HeroArt;
+function Hero() {
+    _s();
+    const { openView } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$StoreContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"])();
+    const featured = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$products$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getProductById"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$products$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["HERO_PRODUCT_ID"]);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "border-b border-line",
+        "aria-labelledby": "hero-title",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "wrap grid gap-9 pb-12 pt-9 nav:grid-cols-[1.05fr_.95fr] nav:items-center nav:gap-[72px] nav:pb-16 nav:pt-14",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex min-w-0 flex-col items-start gap-6",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "eyebrow",
+                            children: "The Autumn Edit · 2026"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/Hero.js",
+                            lineNumber: 57,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                            id: "hero-title",
+                            className: "text-balance text-[clamp(2.7rem,7vw,5.2rem)] leading-none tracking-[-.01em]",
+                            children: [
+                                "Anti-tarnish Fine Jewelry for",
+                                ' ',
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
+                                    className: "font-normal italic text-accent",
+                                    children: "Everyday Elegance"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Hero.js",
+                                    lineNumber: 60,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/Hero.js",
+                            lineNumber: 58,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "max-w-[46ch] text-base text-muted",
+                            children: "Small-batch rings, necklaces and earrings in golden and sterling silver. Cast and set by hand, made to be worn every day and kept for decades."
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/Hero.js",
+                            lineNumber: 62,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-wrap items-center gap-x-7 gap-y-5",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    className: "btn",
+                                    href: "#collection",
+                                    onClick: (e)=>{
+                                        e.preventDefault();
+                                        (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$scroll$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["scrollToId"])('collection');
+                                    },
+                                    children: [
+                                        "Explore the Collection ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$icons$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ArrowIcon"], {
+                                            className: "h-3.5 w-3.5"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Hero.js",
+                                            lineNumber: 75,
+                                            columnNumber: 38
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/Hero.js",
+                                    lineNumber: 67,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    className: "textlink",
+                                    href: "#story",
+                                    onClick: (e)=>{
+                                        e.preventDefault();
+                                        (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$scroll$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["scrollToId"])('story');
+                                    },
+                                    children: "Our Story"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Hero.js",
+                                    lineNumber: 77,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/Hero.js",
+                            lineNumber: 66,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                            className: "flex w-full flex-wrap gap-x-[26px] gap-y-2 border-t border-line pt-[22px] text-[11px] font-medium uppercase leading-snug tracking-[.14em] text-muted",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    children: "Insured shipping"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Hero.js",
+                                    lineNumber: 89,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    children: "30-day returns"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Hero.js",
+                                    lineNumber: 90,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    children: "Lifetime warranty"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Hero.js",
+                                    lineNumber: 91,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/Hero.js",
+                            lineNumber: 88,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/Hero.js",
+                    lineNumber: 56,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "relative aspect-[5/6] max-w-full overflow-hidden bg-plum",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SafeImage$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            src: "/images/hero.jpg",
+                            alt: "A gold solitaire ring catching the evening light",
+                            sizes: "(min-width: 860px) 45vw, 100vw",
+                            fallback: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(HeroArt, {}, void 0, false, {
+                                fileName: "[project]/src/components/Hero.js",
+                                lineNumber: 100,
+                                columnNumber: 23
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/Hero.js",
+                            lineNumber: 96,
+                            columnNumber: 11
+                        }, this),
+                        featured && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            type: "button",
+                            onClick: ()=>openView(featured.id),
+                            className: "absolute inset-x-3.5 bottom-3.5 flex items-center justify-between gap-3 border border-blush/30 bg-ink/80 px-4 py-3 text-left text-[11px] font-medium uppercase leading-snug tracking-[.12em] text-[#F6E9E6] transition-colors duration-300 hover:bg-ink/95",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: [
+                                        featured.name,
+                                        " · ",
+                                        featured.metal
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/Hero.js",
+                                    lineNumber: 108,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "whitespace-nowrap tabular-nums text-amber",
+                                    children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["money"])(featured.price)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Hero.js",
+                                    lineNumber: 109,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/Hero.js",
+                            lineNumber: 103,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/Hero.js",
+                    lineNumber: 95,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/Hero.js",
+            lineNumber: 55,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/src/components/Hero.js",
+        lineNumber: 54,
+        columnNumber: 5
+    }, this);
+}
+_s(Hero, "GfXX5+KIMo4DCz4BwKOJJj1n3f8=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$StoreContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"]
+    ];
+});
+_c1 = Hero;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "HeroArt");
+__turbopack_context__.k.register(_c1, "Hero");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/ProductCard.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>ProductCard
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$StoreContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/context/StoreContext.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/format.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$icons$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/icons.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ProductImage$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ProductImage.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+'use client';
+;
+;
+;
+;
+;
+function ProductCard({ product: p }) {
+    _s();
+    const { wish, toggleWish, addItem, openView } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$StoreContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"])();
+    const [added, setAdded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const timer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "ProductCard.useEffect": ()=>({
+                "ProductCard.useEffect": ()=>clearTimeout(timer.current)
+            })["ProductCard.useEffect"]
+    }["ProductCard.useEffect"], []);
+    const saved = wish.includes(p.id);
+    const hasChoices = p.variants.length > 0;
+    // Pieces with sizes or lengths open Quick View so the customer picks one.
+    // Single-option pieces go straight into the bag.
+    const quickAdd = ()=>{
+        if (hasChoices) return openView(p.id);
+        addItem(p.id, {}, 1);
+        setAdded(true);
+        clearTimeout(timer.current);
+        timer.current = setTimeout(()=>setAdded(false), 1400);
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
+        className: "group min-w-0 transition-transform duration-500 ease-out focus-within:-translate-y-2 hover:-translate-y-2 motion-reduce:transform-none",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "tile relative aspect-[4/5] overflow-hidden transition-shadow duration-500 group-focus-within:shadow-[0_24px_40px_-22px_var(--shadow)] group-hover:shadow-[0_24px_40px_-22px_var(--shadow)]",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ProductImage$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                product: p,
+                                sizes: "(min-width: 1000px) 25vw, 50vw"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ProductCard.js",
+                                lineNumber: 32,
+                                columnNumber: 11
+                            }, this),
+                            p.images[1] && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ProductImage$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                product: p,
+                                index: 1,
+                                bare: true,
+                                sizes: "(min-width: 1000px) 25vw, 50vw",
+                                className: "opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ProductCard.js",
+                                lineNumber: 34,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/ProductCard.js",
+                        lineNumber: 31,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        type: "button",
+                        "aria-pressed": saved,
+                        "aria-label": `Save ${p.name} to wishlist`,
+                        onClick: ()=>toggleWish(p.id),
+                        className: "absolute right-2.5 top-2.5 grid h-9 w-9 place-items-center rounded-full bg-surface p-0 text-fg transition-transform duration-300 hover:scale-110",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$icons$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["HeartIcon"], {
+                            className: `h-[17px] w-[17px] ${saved ? 'fill-accent stroke-accent' : ''}`
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProductCard.js",
+                            lineNumber: 51,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ProductCard.js",
+                        lineNumber: 44,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute inset-x-0 bottom-0 flex translate-y-full transition-transform duration-[400ms] ease-out group-focus-within:translate-y-0 group-hover:translate-y-0 [@media(hover:none)]:translate-y-0",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                type: "button",
+                                onClick: quickAdd,
+                                className: `flex-[1.5] px-1.5 py-[15px] text-[10.5px] font-semibold uppercase leading-none tracking-[.16em] transition-colors duration-300 [@media(hover:none)]:py-3 [@media(hover:none)]:text-[9.5px] ${added ? 'bg-accent text-accentfg' : 'bg-btn text-btnfg hover:bg-btnhover'}`,
+                                children: added ? 'Added' : hasChoices ? `Choose ${p.variants[0].name.toLowerCase()}` : 'Quick add'
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ProductCard.js",
+                                lineNumber: 55,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                type: "button",
+                                onClick: ()=>openView(p.id),
+                                className: "flex-1 bg-surface px-1.5 py-[15px] text-[10.5px] font-semibold uppercase leading-none tracking-[.16em] text-fg transition-colors duration-300 hover:bg-page [@media(hover:none)]:py-3 [@media(hover:none)]:text-[9.5px]",
+                                children: "View"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ProductCard.js",
+                                lineNumber: 64,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/ProductCard.js",
+                        lineNumber: 54,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/ProductCard.js",
+                lineNumber: 30,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex flex-col gap-1.5 pt-4 min-[520px]:flex-row min-[520px]:items-baseline min-[520px]:justify-between min-[520px]:gap-3",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "min-w-0",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                className: "text-[19px] leading-[1.15] min-[520px]:text-[21px]",
+                                children: p.name
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ProductCard.js",
+                                lineNumber: 76,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "mt-1 text-[12.5px] text-muted",
+                                children: p.metal
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ProductCard.js",
+                                lineNumber: 77,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/ProductCard.js",
+                        lineNumber: 75,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "whitespace-nowrap text-sm font-medium tabular-nums",
+                        children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["money"])(p.price)
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ProductCard.js",
+                        lineNumber: 79,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/ProductCard.js",
+                lineNumber: 74,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/ProductCard.js",
+        lineNumber: 29,
+        columnNumber: 5
+    }, this);
+}
+_s(ProductCard, "eQ/aLweFZ4hZWJKywALy12QT7H0=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$StoreContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"]
+    ];
+});
+_c = ProductCard;
+var _c;
+__turbopack_context__.k.register(_c, "ProductCard");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+]);
+
+//# sourceMappingURL=src_components_1g4ejjb8qjshd._.js.map
