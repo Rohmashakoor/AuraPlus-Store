@@ -431,6 +431,20 @@ export const PRODUCTS = [
     placeholder: { kind: 'pave', gem: 'golden', tone: 'white' },
   },
   {
+    id: 'nk-009',
+    name: 'Tulip Flower Pendant Necklace',
+    slug: 'tulip-flower-pandent-necklace',
+    category: 'necklace',
+    metal: 'Sterling Golden',
+    price: 260,
+    description:
+      'A dainty gold tulip flower necklace that adds a soft, feminine touch to any outfit.',
+    dimensions: 'Chain: 40 cm + 5 cm extender',
+    images: ['/images/3color-nk.jpeg', '/images/nk-5.jpg'],
+    variants: [{name:'Color', options:['Black','White','Golden']}],
+    placeholder: { kind: 'coin', gem: 'silver stone', tone: 'silver' },
+  },
+  {
     id: 'rg-009',
     name: 'Black Crown Leaf Ring',
     slug: 'black-crown-leaf-ring',
@@ -444,7 +458,7 @@ export const PRODUCTS = [
     variants: [],
     placeholder: { kind: 'pave', gem: 'silver', tone: 'white' },
   },
-    {
+  {
     id: 'nk-009',
     name: 'Puffed Clover Necklace',
     slug: 'puffed-golden-clover-necklace',
@@ -472,7 +486,7 @@ export const PRODUCTS = [
     variants: [],
     placeholder: { kind: 'pave', gem: 'silver', tone: 'white' },
   },
-    {
+  {
     id: 'nk-010',
     name: 'Golden Star Puffed Necklace',
     slug: 'golden-star-pearl-necklace',
